@@ -9,15 +9,42 @@ Ce dépôt concerne les rendus de mailto:mateo.pepin@etu.univ-tlse2.fr[Matéo Pe
 
 .Exemple de code
 [source,java]
----
+----
 @Given("today is Sunday")
 public void today_is_sunday() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
----
+----
 
 .Exemple d'image insérée en asciidoc
 image::artifacts-r303.svg[width=80%]
 
-== TP2...
+== TP2
+
+Fichier Order.java :
+
+[source,java]
+----
+package dojo;
+
+import java.util.List;
+
+public class Order {
+    private String owner;
+    private String target;
+    private List<String> cocktails;
+    public void declareOwner(String x) {
+        owner = x;
+    }
+
+    public void declareTarget(String x) {
+        target = x;
+    }
+
+    public List<String> getCocktails() {
+        return cocktails;
+    }
+}
+
+----
