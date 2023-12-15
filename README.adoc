@@ -65,3 +65,9 @@ public class Order {
 
 
 == TP4
+Fichier report.txt :
+
+[source,shell]
+----
+include::hellocucumber/report.txt[]
+----
