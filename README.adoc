@@ -7,18 +7,32 @@ Ce dépôt concerne les rendus de mailto:mateo.pepin@etu.univ-tlse2.fr[Matéo Pe
 
 == TP1
 
-.Exemple de code
+Fichier .feature :
+
 [source,java]
 ----
-@Given("today is Sunday")
-public void today_is_sunday() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+Feature: Is it Friday yet
+
+  Scenario: Sunday isn't Friday
+    Given today is Sunday
+    When I ask whether it's Friday yet
+    Then I should be told "Nope"
+    
+  Scenario Outline: Today is <day>
+    Given today is "<day>"
+    When I ask whether it's Friday yet
+    Then I should be told "<answer>"
+  Examples:
+    | day            | answer |
+    | Friday         | TGIF   |
+    | Sunday         | Nope   |
+    | anything else! | Nope   |
 }
 ----
 
-.Exemple d'image insérée en asciidoc
-image::artifacts-r303.svg[width=80%]
+Résultat du test :
+
+image::tests.png[width=80%]
 
 == TP2
 
@@ -48,3 +62,6 @@ public class Order {
 }
 
 ----
+
+
+== TP4

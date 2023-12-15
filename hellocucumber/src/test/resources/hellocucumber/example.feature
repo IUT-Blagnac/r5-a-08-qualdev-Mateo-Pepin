@@ -1,14 +1,16 @@
-Feature: An example
+Feature: Is it Friday yet
 
-  Scenario: The example
-    Given an example scenario
-    When all step definitions are implemented
-    Then the scenario passes
-
-Feature: Is it friday yet?
-  Everybody wants to know when it's Friday
-
-  Scenario: Sunday isn't friday
-    Given today is Sunday7
+  Scenario: Sunday isn't Friday
+    Given today is Sunday
     When I ask whether it's Friday yet
     Then I should be told "Nope"
+    
+  Scenario Outline: Today is <day>
+    Given today is "<day>"
+    When I ask whether it's Friday yet
+    Then I should be told "<answer>"
+  Examples:
+    | day            | answer |
+    | Friday         | TGIF   |
+    | Sunday         | Nope   |
+    | anything else! | Nope   |
